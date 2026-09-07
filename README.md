@@ -31,7 +31,8 @@ This project is a console-based ATM Management System built using Core Java and 
 | balance | DECIMAL | Current available balance |
 | status | VARCHAR | Active / blocked — controls transaction access |
 
-![account table](account%20table.png)
+<img src="account%20table.png" width="500"/>
+
 *Fig 1 — account table data viewed in MySQL Workbench*
 
 ### `transaction`
@@ -43,7 +44,8 @@ This project is a console-based ATM Management System built using Core Java and 
 | amount | FLOAT | Transaction amount |
 | time | TIMESTAMP | Date and time of the transaction |
 
-![transaction table](transaction%20table.png)
+<img src="transaction%20table.png" width="500"/>
+
 *Fig 2 — transaction table logging every withdraw/deposit*
 
 ---
@@ -66,32 +68,36 @@ This project is a console-based ATM Management System built using Core Java and 
 ### 🔐 Account Login with PIN Verification
 User enters an account number and PIN. The system validates credentials against the `account` table and allows up to 3 attempts before the account is auto-blocked.
 
-![login and pin retry](withdraw.png)
+<img src="withdraw.png" width="500"/>
+
 *Fig 3 — Login flow showing invalid-PIN retry (2 chances remaining) before proceeding to a transaction*
 
 ### 💰 Balance Enquiry
 Fetches and displays the current balance for the logged-in account.
 
-![balance checking](balance%20checking.png)
+<img src="balance%20checking.png" width="500"/>
+
 *Fig 4 — Balance check flow in the console*
 
 ### 💵 Withdraw Money
 Validates the amount (must be positive and not exceed the available balance), deducts it from the balance, and logs the transaction.
 
-![withdraw](withdraw.png)
+<img src="withdraw.png" width="500"/>
+
 *Fig 5 — Withdraw transaction with PIN-retry handling*
 
 ### 💳 Deposit Money
 Adds the entered amount to the account balance and logs it in the `transaction` table.
 
-![deposite](deposite.png)
+<img src="deposite.png" width="500"/>
+
 *Fig 6 — Deposit transaction flow*
 
 ### 🔑 Change PIN
 Allows the account holder to update their PIN number in the database.
 
 <!-- Add a "change pin.png" screenshot to your repo and use this line:
-![change pin](change%20pin.png)
+<img src="change%20pin.png" width="500"/>
 *Fig 7 — Change PIN flow* -->
 
 ### ⭐ New Feature — Active/Blocked Account Restriction
@@ -100,7 +106,8 @@ The system now checks the account's `status` column before processing any withdr
 - ❌ **Blocked account** → transaction is rejected with: *"❌ Your account is blocked. Please contact the bank for assistance."*
 - No balance update or transaction record is created when blocked.
 
-![deposite for blocked user](deposite%20for%20blocked%20user.png)
+<img src="deposite%20for%20blocked%20user.png" width="500"/>
+
 *Fig 8 — Deposit attempt correctly blocked for a blocked-status account*
 
 ---
@@ -115,10 +122,12 @@ The system now checks the account's `status` column before processing any withdr
 7. If blocked, the operation is stopped and the user is notified to contact the bank.
 8. Result (new balance / confirmation / error) is printed to the console.
 
-![before transaction](before%20transaction.png)
+<img src="before%20transaction.png" width="450"/>
+
 *Fig 9 — Account state before a transaction*
 
-![after transaction](after%20transaction.png)
+<img src="after%20transaction.png" width="450"/>
+
 *Fig 10 — Account state after the transaction (balance updated in MySQL)*
 
 ---
